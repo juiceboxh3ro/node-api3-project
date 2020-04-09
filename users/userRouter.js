@@ -18,9 +18,10 @@ router.post('/:id/posts', validatePost, (req, res) => {
 });
 
 router.get('/', (req, res) => {
+  const message = process.env.MESSAGE || "hello from localhost";
   method.get(req.query)
   .then(users => {
-    res.status(200).json(users)
+    res.status(200).json({data: users, msg: message})
   })
   .catch(err => console.error(err))
 });
