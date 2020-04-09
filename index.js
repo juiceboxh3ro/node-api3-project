@@ -1,5 +1,7 @@
+const port = process.env.PORT || 5050
+
 const server = require('./server.js')
 
-server.listen(5050, () => {
-  console.log("Whaddup I'm on 5050 boi")
+server.listen(port, () => {
+  console.log(`Whaddup I'm on ${port} boi`)
 })
